@@ -354,7 +354,7 @@ class metrics(object):
             for i in range(0, len(pattern[track_num])):
                 if type(pattern[track_num][i]) == midi.events.TimeSignatureEvent:
                     time_sig = pattern[track_num][i].data
-                    bar_length = time_sig[track_num] * resolution * 4 / 2**(time_sig[1])
+                    bar_length = time_sig[0] * resolution * 4 / 2**(time_sig[1])
                 elif type(pattern[track_num][i]) == midi.events.NoteOnEvent and pattern[track_num][i].data[1] != 0:
                     if 'time_sig' not in locals():  # set default bar length as 4 beat
                         bar_length = 4 * resolution
@@ -381,7 +381,7 @@ class metrics(object):
             for i in range(0, len(pattern[track_num])):
                 if type(pattern[track_num][i]) == midi.events.TimeSignatureEvent:
                     time_sig = pattern[track_num][i].data
-                    bar_length = time_sig[track_num] * resolution * 4 / 2**(time_sig[1])
+                    bar_length = time_sig[0] * resolution * 4 / 2**(time_sig[1])
                 elif type(pattern[track_num][i]) == midi.events.NoteOnEvent and pattern[track_num][i].data[1] != 0:
                     check_previous_off = True
                     if 'time_sig' not in locals():  # set default bar length as 4 beat
@@ -456,7 +456,7 @@ class metrics(object):
             for i in range(0, len(pattern[track_num])):
                 if type(pattern[track_num][i]) == midi.events.TimeSignatureEvent:
                     time_sig = pattern[track_num][i].data
-                    bar_length = time_sig[track_num] * resolution * 4 / 2**(time_sig[1])
+                    bar_length = time_sig[0] * resolution * 4 / 2**(time_sig[1])
                 elif type(pattern[track_num][i]) == midi.events.NoteOnEvent and pattern[track_num][i].data[1] != 0:
                     if 'time_sig' not in locals():  # set default bar length as 4 beat
                         bar_length = 4 * resolution
@@ -486,7 +486,7 @@ class metrics(object):
             for i in range(0, len(pattern[track_num])):
                 if type(pattern[track_num][i]) == midi.events.TimeSignatureEvent:
                     time_sig = pattern[track_num][i].data
-                    bar_length = time_sig[track_num] * resolution * 4 / 2**(time_sig[1])
+                    bar_length = time_sig[0] * resolution * 4 / 2**(time_sig[1])
                 elif type(pattern[track_num][i]) == midi.events.NoteOnEvent and pattern[track_num][i].data[1] != 0:
                     check_previous_off = True
                     if 'time_sig' not in locals():  # set default bar length as 4 beat
