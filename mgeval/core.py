@@ -138,7 +138,7 @@ class metrics(object):
         for i in range(0, len(pattern[track_num])):
             if type(pattern[track_num][i]) == midi.events.TimeSignatureEvent:
                 time_sig = pattern[track_num][i].data
-                bar_length = time_sig[track_num] * resolution * 4 / 2**(time_sig[1])
+                bar_length = time_sig[0] * resolution * 4 / 2**(time_sig[1])
                 if num_bar is None:
                     num_bar = int(round(float(pattern[track_num][-1].tick) / bar_length))
                     used_notes = np.zeros((num_bar, 1))
